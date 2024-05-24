@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.card{
+    position: relative;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 10px 1px black;
+    overflow: hidden;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    height: 130%;
+    width: 160%;
+    transform: translate(-50%, -50%) rotate(-280deg);
+    top: 50%;
+    left: 50%;
+    background-image: conic-gradient(magenta 0deg, magenta 90deg, transparent 130deg, transparent 180deg, blue 180deg, blue 270deg, transparent 310deg, transparent 360deg);
+    transition: transform 2s;
+}
+
+.card:hover::before{
+    transform: translate(-50%, -50%) rotate(-100deg);
+}
+
+.card::after{
+    content: "after/before";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 130%;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 192px;
+    height: 190px;
+    background-color: black;
+}
